@@ -17,7 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 /*create a tournament and view the list of tournaments.
-View rounds/standings" is created as a placeholder label for now*/
+View rounds/standings is created as a placeholder for now*/
 
 public class TournamentScreen {
 
