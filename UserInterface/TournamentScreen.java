@@ -1,7 +1,6 @@
 package TicTacToe.UserInterface;
 
-//import TicTacToe.dao.TournamentDAO; add when TournamentDAO made
-//import TicTacToe.model.Tournament; add when Tournament model made
+import TicTacToe.model.Tournament;
 import TicTacToe.util.DialogUtil;
 import TicTacToe.util.ValidationException;
 import TicTacToe.util.Validator;
@@ -16,12 +15,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-/*create a tournament and view the list of tournaments.
-View rounds/standings is created as a placeholder for now*/
-
+/**
+ * TournamentScreen allows users to create and view tournaments.
+ * This implements basic CRUD for the Tournament entity.
+ * It interacts with the TournamentDAO to persist data.
+ */
 public class TournamentScreen {
 
     public static Scene build(SceneManager sceneManager, TournamentDAO tournamentDAO) {
+        // READ: Load all existing tournaments from the database
         ObservableList<Tournament> tournaments = FXCollections.observableArrayList(tournamentDAO.findAll());
         ListView<Tournament> listView = new ListView<>(tournaments);
         listView.getStyleClass().add("list-view");
@@ -35,6 +37,7 @@ public class TournamentScreen {
         createBtn.getStyleClass().add("primary-button");
         deleteBtn.getStyleClass().add("danger-button");
 
+        // Standings label acts as a placeholder for detailed match/round data
         Label standings = new Label(
                 "Select a tournament to view standings.\n" +
                 "(Standings populate once Match/Round data is wired up through the database.)"
@@ -42,6 +45,7 @@ public class TournamentScreen {
         standings.setWrapText(true);
         standings.getStyleClass().add("hint-label");
 
+        // CREATE: Validate the name and save the tournament via DAO
         createBtn.setOnAction(e -> {
             try {
                 String name = Validator.requireNonBlankTournamentName(nameField.getText());
@@ -53,6 +57,7 @@ public class TournamentScreen {
             }
         });
 
+        // DELETE: Remove the selected tournament from the database
         deleteBtn.setOnAction(e -> {
             Tournament selected = listView.getSelectionModel().getSelectedItem();
             if (selected == null) {
@@ -63,6 +68,7 @@ public class TournamentScreen {
             tournaments.remove(selected);
         });
 
+        // Interaction: Update the standings text when a tournament is selected
         listView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 standings.setText("Standings for \"" + newVal.getName() + "\" will appear here.");

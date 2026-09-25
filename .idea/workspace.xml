@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e9c0df6-b260-4ee3-813c-ae4da54fc542" name="Changes" comment="I created the user interface,added the css and the util also added dao and model...">
+    <list default="true" id="5e9c0df6-b260-4ee3-813c-ae4da54fc542" name="Changes" comment="fixed errors and bugs on my side of the code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserInterface/MainMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/MainMenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserInterface/PlayerProfileScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/PlayerProfileScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserInterface/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/SceneManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserInterface/TournamentScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/TournamentScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789988148572</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed errors and bugs on my side of the code">
+      <option name="closed" value="true" />
+      <created>1790140532660</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1790140532660</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I created the user interface,added the css and the util" />
     <MESSAGE value="I created the user interface,added the css and the util also added dao and model..." />
-    <option name="LAST_COMMIT_MESSAGE" value="I created the user interface,added the css and the util also added dao and model..." />
+    <MESSAGE value="fixed errors and bugs on my side of the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed errors and bugs on my side of the code" />
   </component>
 </project>
