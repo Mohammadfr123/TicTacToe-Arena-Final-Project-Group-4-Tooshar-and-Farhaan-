@@ -1,10 +1,7 @@
 package TicTacToe.util;
 
-/**
- * All input validation lives here, in one place, so every screen enforces
- * the same rules. Validation happens before anything is passed to a DAO -
- * as bad data must never reach the database.
- */
+/*All input validation lives here*/
+
 public class Validator {
 
     private static final int MAX_USERNAME_LENGTH = 20;

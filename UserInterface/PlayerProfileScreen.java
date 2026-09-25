@@ -1,6 +1,5 @@
 package TicTacToe.UserInterface;
 
-//import TicTacToe.dao.PlayerDAO; i'll add it when PlayerDAO is finished
 import TicTacToe.model.Player;
 import TicTacToe.util.DialogUtil;
 import TicTacToe.util.ValidationException;
@@ -16,11 +15,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-/*player profile screen - create, update, delete, and view players.*/
-
+/**
+ * PlayerProfileScreen allows the user to manage registered players.
+ * This implements full CRUD (Create, Read, Update, Delete).
+ * It interacts with the PlayerDAO to persist data in the database.
+ */
 public class PlayerProfileScreen {
 
     public static Scene build(SceneManager sceneManager, PlayerDAO playerDAO) {
+        // READ: We fetch all players from the database and put them in an ObservableList
+        // so the ListView updates automatically when the list changes.
         ObservableList<Player> players = FXCollections.observableArrayList(playerDAO.findAll());
         ListView<Player> listView = new ListView<>(players);
 
@@ -37,6 +41,7 @@ public class PlayerProfileScreen {
         updateBtn.getStyleClass().add("secondary-button");
         deleteBtn.getStyleClass().add("danger-button");
 
+        // CREATE: Validate input, then call DAO to save to database
         addBtn.setOnAction(e -> {
             try {
                 String username = Validator.requireNonBlankUsername(usernameField.getText());
@@ -48,6 +53,7 @@ public class PlayerProfileScreen {
             }
         });
 
+        // UPDATE: Update the username of the selected player in the DB
         updateBtn.setOnAction(e -> {
             Player selected = listView.getSelectionModel().getSelectedItem();
             if (selected == null) {
@@ -65,6 +71,7 @@ public class PlayerProfileScreen {
             }
         });
 
+        // DELETE: Remove the player from the database by ID
         deleteBtn.setOnAction(e -> {
             Player selected = listView.getSelectionModel().getSelectedItem();
             if (selected == null) {
