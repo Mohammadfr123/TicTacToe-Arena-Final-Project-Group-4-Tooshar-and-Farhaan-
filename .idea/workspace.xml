@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e9c0df6-b260-4ee3-813c-ae4da54fc542" name="Changes" comment="fixed errors and bugs on my side of the code">
+    <list default="true" id="5e9c0df6-b260-4ee3-813c-ae4da54fc542" name="Changes" comment="updated all screens with comments and added a README for GUI and UX also added a VIVA guide for better framing of our project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterface/MainMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/MainMenuScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterface/PlayerProfileScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/PlayerProfileScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterface/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/SceneManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserInterface/TournamentScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserInterface/TournamentScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/READ.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Tournament.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790140532660</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updated all screens with comments and added a README for GUI and UX also added a VIVA guide for better framing of our project">
+      <option name="closed" value="true" />
+      <created>1790359635322</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1790359635322</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +131,7 @@
     <MESSAGE value="I created the user interface,added the css and the util" />
     <MESSAGE value="I created the user interface,added the css and the util also added dao and model..." />
     <MESSAGE value="fixed errors and bugs on my side of the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed errors and bugs on my side of the code" />
+    <MESSAGE value="updated all screens with comments and added a README for GUI and UX also added a VIVA guide for better framing of our project" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated all screens with comments and added a README for GUI and UX also added a VIVA guide for better framing of our project" />
   </component>
 </project>
