@@ -54,7 +54,7 @@ public class RoundDAO {
                 return roundId;
 
             } catch (SQLException e) {
-                conn.rollback();
+                conn.rollback(); //undo changes in case of errors
                 throw e;
             } finally {
                 conn.setAutoCommit(true);
