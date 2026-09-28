@@ -28,5 +28,14 @@ public final class WinChecker {
         }
         return lineMatches(board, candidate, line, positionIndex + 1);
     }
+
+    public boolean isFull(char[] board) {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i] == EMPTY) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 

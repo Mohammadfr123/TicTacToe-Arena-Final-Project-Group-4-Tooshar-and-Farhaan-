@@ -2,6 +2,10 @@ package TicTacToe.UserInterface;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import TicTacToe.dao.PlayerDAO;
+import TicTacToe.dao.TournamentDAO;
+import javafx.stage.Stage;
+
 
 /**
  * SceneManager acts as the "Router" or "Controller" for the application.
@@ -12,7 +16,6 @@ import javafx.stage.Stage;
 public class SceneManager {
 
     private final Stage stage;
-    // These are the bridges to the database. Tooshar implements these.
     private final PlayerDAO playerDAO;
     private final TournamentDAO tournamentDAO;
 

@@ -4,7 +4,7 @@ public class Move {
     private long id;
     private long matchId;
     private long playerId;
-    private int boardPosition
+    private int boardPosition;
     private int moveNumber;
 
     public Move(long id, long matchId, long playerId, int boardPosition, int moveNumber) {

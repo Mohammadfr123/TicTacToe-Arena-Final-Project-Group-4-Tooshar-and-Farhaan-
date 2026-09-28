@@ -14,6 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import TicTacToe.dao.TournamentDAO;
 
 /**
  * TournamentScreen allows users to create and view tournaments.

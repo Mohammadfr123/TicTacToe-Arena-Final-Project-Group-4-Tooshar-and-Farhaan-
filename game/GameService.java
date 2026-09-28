@@ -1,4 +1,4 @@
-pakage TicTacToe.game;
+package TicTacToe.game;
 
 import TicTacToe.dao.MatchDAO;
 import TicTacToe.dao.MoveDAO;

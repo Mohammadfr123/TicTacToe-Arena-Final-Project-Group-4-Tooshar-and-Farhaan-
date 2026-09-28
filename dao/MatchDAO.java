@@ -27,7 +27,7 @@ public class MatchDAO {
 
             // round_id: nullable (null = casual match, no tournament)
             if (roundId == null) {
-                stmt.setNull(1, Statement.INTEGER);
+                stmt.setNull(1, java.sql.Types.INTEGER.);
             } else {
                 stmt.setLong(1, roundId);
             }
@@ -40,7 +40,7 @@ public class MatchDAO {
 
             // winner_id: nullable (null = draw)
             if (winnerId == null) {
-                stmt.setNull(4, Statement.INTEGER);
+                stmt.setNull(4, java.sql.Types.INTEGER.);
             } else {
                 stmt.setLong(4, winnerId);
             }
