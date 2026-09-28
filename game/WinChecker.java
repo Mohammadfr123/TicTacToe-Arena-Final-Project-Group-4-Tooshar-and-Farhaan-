@@ -31,7 +31,7 @@ public final class WinChecker {
 
     public boolean isFull(char[] board) {
         for (int i = 0; i < board.length; i++) {
-            if (board[i] == EMPTY) {
+            if (board[i] == ' ') {
                 return false;
             }
         }
