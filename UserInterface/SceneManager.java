@@ -29,17 +29,13 @@ public class SceneManager {
         stage.setScene(MainMenuScreen.build(this));
     }
 
-    /**
-     * Transitions the app to the Game Board for a match.
-     */
+    //Transitions the app to the Game Board for a match
     public void showGameBoard() {
         stage.setScene(GameBoardScreen.build(this));
     }
 
-    /**
-     * Transitions the app to Player Profiles management.
-     * We pass the playerDAO here so the screen can create/update/delete players.
-     */
+    //Transitions the app to Player Profiles management.
+    // We pass the playerDAO here so the screen can create/update/delete players
     public void showPlayerProfiles() {
         stage.setScene(PlayerProfileScreen.build(this, playerDAO));
     }
