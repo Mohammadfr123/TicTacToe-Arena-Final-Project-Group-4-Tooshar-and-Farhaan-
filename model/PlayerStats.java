@@ -1,3 +1,5 @@
+package TicTacToe.model;
+
 public class PlayerStats {
     private final long gamesPlayed;
     private final long wins;

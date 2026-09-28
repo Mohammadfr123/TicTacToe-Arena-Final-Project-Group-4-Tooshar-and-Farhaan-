@@ -1,3 +1,5 @@
+package TicTacToe.model;
+
 public class Move {
     private long id;
     private long matchId;
