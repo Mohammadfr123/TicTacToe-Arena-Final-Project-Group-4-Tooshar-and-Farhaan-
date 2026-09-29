@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5e9c0df6-b260-4ee3-813c-ae4da54fc542" name="Changes" comment="updated all screens with comments and added a README for GUI and UX also added a VIVA guide for better framing of our project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/READ.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Tournament.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
