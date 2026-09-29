@@ -19,8 +19,13 @@ public class GameService {
         this.rounds = rounds;
     }
 
-    public long saveCompleted(GameSession session, Long tournamentId)
-            throws SQLException {
+    public long saveCompleted(GameSession session, Long tournamentId) throws SQLException {
+
+        // Free play (no tournament): nothing to persist
+        if (tournamentId == 0L) {
+            return 0L;
+        }
+
         // 1. Create round if this is a tournament match
         Long roundId = (tournamentId == null) ? null : rounds.createNext(tournamentId);
 

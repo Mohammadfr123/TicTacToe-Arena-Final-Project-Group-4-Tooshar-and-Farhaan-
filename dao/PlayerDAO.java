@@ -100,9 +100,9 @@ public class PlayerDAO {
     public PlayerStats stats(long playerId) throws SQLException {
         String sql =
                 "SELECT COUNT(m.id) AS played," +
-                        "       COALESCE(SUM(CASE WHEN m.winner_id = ? THEN 1 ELSE 0 END), 0) AS wins," + //Coalesce returns the first non-NULL value in a list
-                        "       COALESCE(SUM(CASE WHEN m.winner_id IS NULL THEN 1 ELSE 0 END), 0) AS draws" +
-                        "FROM matches m" +
+                        "       COALESCE(SUM(CASE WHEN m.winner_id = ? THEN 1 ELSE 0 END), 0) AS wins, " + //Coalesce returns the first non-NULL value in a list
+                        "       COALESCE(SUM(CASE WHEN m.winner_id IS NULL THEN 1 ELSE 0 END), 0) AS draws " +
+                        "FROM matches m " +
                         "WHERE m.player1_id = ? OR m.player2_id = ?";
 
         try (Connection conn = database.open();
@@ -128,5 +128,6 @@ public class PlayerDAO {
                 rs.getString("username"),
                 Instant.parse(rs.getString("created_at")));
     }
+
 }
 

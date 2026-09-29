@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 import TicTacToe.dao.PlayerDAO;
 import TicTacToe.dao.TournamentDAO;
 import javafx.stage.Stage;
+import TicTacToe.game.GameService;
 
 
 /**
@@ -18,12 +19,16 @@ public class SceneManager {
     private final Stage stage;
     private final PlayerDAO playerDAO;
     private final TournamentDAO tournamentDAO;
+    private final GameService gameService;
 
-    public SceneManager(Stage stage, PlayerDAO playerDAO, TournamentDAO tournamentDAO) {
+
+    public SceneManager(Stage stage, PlayerDAO playerDAO, TournamentDAO tournamentDAO, GameService gameService) {
         this.stage = stage;
         this.playerDAO = playerDAO;
         this.tournamentDAO = tournamentDAO;
+        this.gameService = gameService;
     }
+
 
     /**
      * Transitions the app to the Main Menu.
@@ -34,7 +39,7 @@ public class SceneManager {
 
     //Transitions the app to the Game Board for a match
     public void showGameBoard() {
-        stage.setScene(GameBoardScreen.build(this));
+        stage.setScene(GameBoardScreen.build(this, gameService, 0L, 0L, "Player X", 0L, "Player O"));
     }
 
     //Transitions the app to Player Profiles management.
@@ -48,7 +53,16 @@ public class SceneManager {
      * We pass the tournamentDAO here so the screen can manage tournaments.
      */
     public void showTournaments() {
-        stage.setScene(TournamentScreen.build(this, tournamentDAO));
+        stage.setScene(TournamentScreen.build(this, tournamentDAO, playerDAO));
+    }
+
+    /**
+     * Opens the game board for a match inside a tournament.
+     * GameSession tracks the state; GameService persists round + match + moves
+     * when the game ends.
+     */
+    public void showTournamentMatch(long tournamentId, long playerXId, String playerXName, long playerOId, String playerOName) {
+        stage.setScene(GameBoardScreen.build(this, gameService, tournamentId, playerXId, playerXName, playerOId, playerOName));
     }
 
     /**

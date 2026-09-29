@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import TicTacToe.dao.PlayerDAO;
+import TicTacToe.model.PlayerStats;
 
 
 /**
@@ -101,6 +102,27 @@ public class PlayerProfileScreen {
             }
         });
 
+        // Show stats for selected player
+        Label statsLabel = new Label("Select a player to view stats.");
+        statsLabel.setWrapText(true);
+        statsLabel.getStyleClass().add("hint-label");
+
+        listView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal != null) {
+                try {
+                    PlayerStats stats = playerDAO.stats(newVal.getId());
+                    statsLabel.setText(
+                            stats.getGamesPlayed() + " games  |  " +
+                                    stats.getWins() + " wins  |  " +
+                                    stats.getDraws() + " draws");
+                } catch (SQLException ex) {
+                    statsLabel.setText("Could not load stats: " + ex.getMessage());
+                }
+            } else {
+                statsLabel.setText("Select a player to view stats.");
+            }
+        });
+
         Button backBtn = new Button("Back to Menu");
         backBtn.getStyleClass().add("back-button");
         backBtn.setOnAction(e -> sceneManager.showMainMenu());
@@ -109,7 +131,7 @@ public class PlayerProfileScreen {
         title.getStyleClass().add("section-label");
 
         HBox formRow = new HBox(10, usernameField, addBtn, updateBtn, deleteBtn);
-        VBox card = new VBox(15, title, listView, formRow);
+        VBox card = new VBox(15, title, listView, formRow, statsLabel);
         card.getStyleClass().add("card");
         VBox root = new VBox(20, card, backBtn);
         root.setPadding(new Insets(24));

@@ -5,6 +5,8 @@ import TicTacToe.util.DialogUtil;
 import TicTacToe.util.ValidationException;
 import TicTacToe.util.Validator;
 import java.sql.SQLException;
+import java.util.List;
+import TicTacToe.model.Player;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -13,9 +15,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import TicTacToe.dao.TournamentDAO;
+import TicTacToe.dao.PlayerDAO;
+import TicTacToe.model.TournamentStanding;
 
 /**
  * TournamentScreen allows users to create and view tournaments.
@@ -24,7 +29,7 @@ import TicTacToe.dao.TournamentDAO;
  */
 public class TournamentScreen {
 
-    public static Scene build(SceneManager sceneManager, TournamentDAO tournamentDAO) {
+    public static Scene build(SceneManager sceneManager, TournamentDAO tournamentDAO, PlayerDAO playerDAO) {
         // READ: Load all existing tournaments from the database
 
         final ObservableList<Tournament> tournaments = FXCollections.observableArrayList();
@@ -37,22 +42,113 @@ public class TournamentScreen {
         ListView<Tournament> listView = new ListView<>(tournaments);
         listView.getStyleClass().add("list-view");
 
+        // Choosing Player for the match
+        Label pickLabel = new Label("Pick two players for the match:");
+        pickLabel.getStyleClass().add("hint-label");
+
+        ObservableList<Player> playerList = FXCollections.observableArrayList();
+        try {
+            playerList.addAll(playerDAO.findAll());
+        } catch (SQLException e) {
+            DialogUtil.showError("Database error", "Could not load players: " + e.getMessage());
+        }
+
+        ComboBox<Player> playerXCombo = new ComboBox<>();  // empty constructor
+        playerXCombo.setPromptText("Player X (goes first)");
+        playerXCombo.setPrefWidth(160);
+
+        ComboBox<Player> playerOCombo = new ComboBox<>();  // empty constructor
+        playerOCombo.setPromptText("Player O");
+        playerOCombo.setPrefWidth(160);
+
+        //populating the list
+        playerXCombo.getItems().addAll(playerList);
+        playerOCombo.getItems().addAll(playerList);
+
+
         TextField nameField = new TextField();
         nameField.setPromptText("Tournament name");
         nameField.getStyleClass().add("text-field");
 
         Button createBtn = new Button("Create Tournament");
         Button deleteBtn = new Button("Delete Selected");
+        Button startMatchBtn = new Button("Start Match");
         createBtn.getStyleClass().add("primary-button");
         deleteBtn.getStyleClass().add("danger-button");
 
-        // Standings label acts as a placeholder for detailed match/round data
+        // START MATCH: Launch a game inside the selected tournament
+        startMatchBtn.getStyleClass().add("primary-button");
+        startMatchBtn.setOnAction(e -> {
+            Tournament selected = listView.getSelectionModel().getSelectedItem();
+            if (selected == null) {
+                DialogUtil.showError("No tournament selected",
+                        "Select a tournament first.");
+                return;
+            }
+            try {
+                // Load all players and pick the first two
+                List<Player> allPlayers = playerDAO.findAll();
+                if (allPlayers.size() < 2) {
+                    DialogUtil.showError("Not enough players",
+                            "You need at least 2 registered players to start a match.");
+                    return;
+                }
+
+                Player playerX = playerXCombo.getValue();
+                Player playerO = playerOCombo.getValue();
+                if (playerX == null || playerO == null) {
+                    DialogUtil.showError("Players not selected",
+                            "Pick both Player X and Player O from the dropdowns.");
+                    return;
+                }
+                if (playerX.getId() == playerO.getId()) {
+                    DialogUtil.showError("Same player",
+                            "Player X and Player O must be different.");
+                    return;
+                }
+                sceneManager.showTournamentMatch(selected.getId(), playerX.getId(), playerX.getUsername(), playerO.getId(), playerO.getUsername());
+
+            } catch (SQLException ex) {
+                DialogUtil.showError("Database error",
+                        "Could not load players: " + ex.getMessage());
+            }
+        });
+
+
+        // Standings compute from database when tournament is selected
         Label standings = new Label(
                 "Select a tournament to view standings.\n" +
                 "(Standings populate once Match/Round data is wired up through the database.)"
         );
         standings.setWrapText(true);
         standings.getStyleClass().add("hint-label");
+
+        listView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal != null) {
+                try {
+                    List<TournamentStanding> standingsList = tournamentDAO.standings(newVal.getId());
+                    if (standingsList.isEmpty()) {
+                        standings.setText("No matches played in this tournament yet.");
+                    } else {
+                        StringBuilder sb = new StringBuilder("Standings:\n\n");
+                        for (TournamentStanding s : standingsList) {
+                            sb.append(String.format("%-14s  %2d games  %2d wins  %2d draws  %3d pts\n",
+                                    s.getUsername(),
+                                    s.getPlayed(),
+                                    s.getWins(),
+                                    s.getDraws(),
+                                    s.getPoints()));
+                        }
+                        standings.setText(sb.toString());
+                    }
+                } catch (SQLException ex) {
+                    standings.setText("Could not load standings: " + ex.getMessage());
+                }
+            } else {
+                standings.setText("Select a tournament to view standings.");
+            }
+        });
+
 
         // CREATE: Validate the name and save the tournament via DAO
         createBtn.setOnAction(e -> {
@@ -83,13 +179,6 @@ public class TournamentScreen {
             }
         });
 
-        // Interaction: Update the standings text when a tournament is selected
-        listView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal != null) {
-                standings.setText("Standings for \"" + newVal.getName() + "\" will appear here.");
-            }
-        });
-
         Button backBtn = new Button("Back to Menu");
         backBtn.getStyleClass().add("back-button");
         backBtn.setOnAction(e -> sceneManager.showMainMenu());
@@ -97,8 +186,9 @@ public class TournamentScreen {
         Label title = new Label("Tournaments");
         title.getStyleClass().add("section-label");
 
-        HBox formRow = new HBox(10, nameField, createBtn, deleteBtn);
-        VBox card = new VBox(15, title, listView, formRow, standings);
+        HBox formRow = new HBox(10, nameField, createBtn, deleteBtn, startMatchBtn);
+        HBox pickRow = new HBox(10, pickLabel, playerXCombo, playerOCombo);
+        VBox card = new VBox(15, title, listView, formRow, pickRow ,standings);
         card.getStyleClass().add("card");
         VBox root = new VBox(20, card, backBtn);
         root.setPadding(new Insets(24));

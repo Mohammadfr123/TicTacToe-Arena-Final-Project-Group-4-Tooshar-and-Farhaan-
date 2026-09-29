@@ -105,13 +105,13 @@ public class TournamentDAO {
                         "       COUNT(m.id) AS played," +
                         "       SUM(CASE WHEN m.winner_id = p.id THEN 1 ELSE 0 END) AS wins," +
                         "       SUM(CASE WHEN m.winner_id IS NULL THEN 1 ELSE 0 END) AS draws," +
-                        "       SUM(CASE WHEN m.winner_id = p.id THEN 3" +
-                        "                WHEN m.winner_id IS NULL THEN 1 ELSE 0 END) AS points" +
-                        "FROM players p" +
-                        "JOIN matches m ON p.id = m.player1_id OR p.id = m.player2_id" +
-                        "JOIN rounds r ON r.id = m.round_id" +
-                        "WHERE r.tournament_id = ?" +
-                        "GROUP BY p.id, p.username" +
+                        "       SUM(CASE WHEN m.winner_id = p.id THEN 3 " +
+                        "                WHEN m.winner_id IS NULL THEN 1 ELSE 0 END) AS points " +
+                        "FROM players p " +
+                        "JOIN matches m ON p.id = m.player1_id OR p.id = m.player2_id " +
+                        "JOIN rounds r ON r.id = m.round_id " +
+                        "WHERE r.tournament_id = ? " +
+                        "GROUP BY p.id, p.username " +
                         "ORDER BY points DESC, wins DESC, played ASC, p.username ASC";
 
         List<TournamentStanding> lstStandings = new ArrayList<>();
