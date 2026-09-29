@@ -5,6 +5,8 @@ import TicTacToe.util.DialogUtil;
 import TicTacToe.util.ValidationException;
 import TicTacToe.util.Validator;
 import java.sql.SQLException;
+import java.util.List;
+import TicTacToe.model.Player;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -43,8 +45,38 @@ public class TournamentScreen {
 
         Button createBtn = new Button("Create Tournament");
         Button deleteBtn = new Button("Delete Selected");
+        Button startMatchBtn = new Button("Start Match");
         createBtn.getStyleClass().add("primary-button");
         deleteBtn.getStyleClass().add("danger-button");
+
+        // START MATCH: Launch a game inside the selected tournament
+        startMatchBtn.setOnAction(e -> {
+            Tournament selected = listView.getSelectionModel().getSelectedItem();
+            if (selected == null) {
+                DialogUtil.showError("No tournament selected",
+                        "Select a tournament first.");
+                return;
+            }
+            try {
+                // Load all players and pick the first two
+                List<Player> allPlayers = playerDAO.findAll();
+                if (allPlayers.size() < 2) {
+                    DialogUtil.showError("Not enough players",
+                            "You need at least 2 registered players to start a match.");
+                    return;
+                }
+                Player playerX = allPlayers.get(0);
+                Player playerO = allPlayers.get(1);
+                sceneManager.showTournamentMatch(
+                        selected.getId(),
+                        playerX.getId(), playerX.getUsername(),
+                        playerO.getId(), playerO.getUsername());
+            } catch (SQLException ex) {
+                DialogUtil.showError("Database error",
+                        "Could not load players: " + ex.getMessage());
+            }
+        });
+
 
         // Standings label acts as a placeholder for detailed match/round data
         Label standings = new Label(
@@ -97,7 +129,7 @@ public class TournamentScreen {
         Label title = new Label("Tournaments");
         title.getStyleClass().add("section-label");
 
-        HBox formRow = new HBox(10, nameField, createBtn, deleteBtn);
+        HBox formRow = new HBox(10, nameField, createBtn, deleteBtn, startMatchBtn);
         VBox card = new VBox(15, title, listView, formRow, standings);
         card.getStyleClass().add("card");
         VBox root = new VBox(20, card, backBtn);

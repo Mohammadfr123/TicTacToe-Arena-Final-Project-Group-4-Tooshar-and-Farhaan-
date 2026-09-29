@@ -8,6 +8,7 @@ import TicTacToe.dao.MatchDAO;
 import TicTacToe.dao.MoveDAO;
 import TicTacToe.UserInterface.SceneManager;
 import TicTacToe.util.DialogUtil;
+import TicTacToe.game.GameService;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -25,6 +26,7 @@ public class Main extends Application {
     private MatchDAO matchDAO;
     private MoveDAO moveDAO;
     private SceneManager sceneManager;
+    private GameService gameService;
 
     @Override
     public void start(Stage primaryStage) {
@@ -42,10 +44,13 @@ public class Main extends Application {
             matchDAO = new MatchDAO(database);
             moveDAO = new MoveDAO(database);
 
-            // 4. SceneManager - receives the primaryStage
-            sceneManager = new SceneManager(primaryStage, playerDAO, tournamentDAO);
+            //4. Game Service for Tournament
+            gameService = new GameService(matchDAO, moveDAO, roundDAO);
 
-            // 5. Show the main menu - the first screen the user sees.
+            // 5. SceneManager - receives the primaryStage
+            sceneManager = new SceneManager(primaryStage, playerDAO, tournamentDAO, gameService);
+
+            // 6. Show the main menu - the first screen the user sees.
             primaryStage.show(); //To show the stage
             sceneManager.showMainMenu();
 
