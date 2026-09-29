@@ -32,17 +32,17 @@ The application is designed to be "zero-config". On the first execution, the app
 
 ## How to compile and run on linux (TKS's laptop ,nobara)
 - Compile: 
+
 javac --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
 --add-modules ALL-MODULE-PATH \
 -cp "lib/sqlite-jdbc-3.46.1.3.jar" \
 -d out \
 $(find . -name "*.java")
-./dao/MatchDAO.java:30: error: <identifier> expected
-stmt.setNull(1, java.sql.Types.INTEGER.);
-^
-./dao/MatchDAO.java:43: error: <identifier> expected
-stmt.setNull(4, java.sql.Types.INTEGER.);
-^
-2 errors
 
-- Run:
+- Run: 
+
+java --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+--add-modules ALL-MODULE-PATH \
+-cp "out:lib/sqlite-jdbc-3.46.1.3.jar" \
+-Djava.library.path="/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+TicTacToe.Main

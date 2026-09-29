@@ -4,6 +4,7 @@ import TicTacToe.model.Tournament;
 import TicTacToe.util.DialogUtil;
 import TicTacToe.util.ValidationException;
 import TicTacToe.util.Validator;
+import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -25,7 +26,14 @@ public class TournamentScreen {
 
     public static Scene build(SceneManager sceneManager, TournamentDAO tournamentDAO) {
         // READ: Load all existing tournaments from the database
-        ObservableList<Tournament> tournaments = FXCollections.observableArrayList(tournamentDAO.findAll());
+
+        final ObservableList<Tournament> tournaments = FXCollections.observableArrayList();
+        try {
+            tournaments.addAll(tournamentDAO.findAll());
+        } catch (SQLException e) {
+            DialogUtil.showError("Database error", "Could not load tournaments: " + e.getMessage());
+        }
+
         ListView<Tournament> listView = new ListView<>(tournaments);
         listView.getStyleClass().add("list-view");
 
@@ -55,6 +63,8 @@ public class TournamentScreen {
                 nameField.clear();
             } catch (ValidationException ex) {
                 DialogUtil.showError("Couldn't create tournament", ex.getMessage());
+            } catch (SQLException ex) {
+                DialogUtil.showError("Database error", "Could not create tournament: " + ex.getMessage());
             }
         });
 
@@ -65,8 +75,12 @@ public class TournamentScreen {
                 DialogUtil.showError("Nothing selected", "Select a tournament from the list first.");
                 return;
             }
-            tournamentDAO.delete(selected.getId());
-            tournaments.remove(selected);
+            try {
+                tournamentDAO.delete(selected.getId());
+                tournaments.remove(selected);
+            } catch (SQLException ex) {
+                DialogUtil.showError("Database error", "Could not delete tournament: " + ex.getMessage());
+            }
         });
 
         // Interaction: Update the standings text when a tournament is selected

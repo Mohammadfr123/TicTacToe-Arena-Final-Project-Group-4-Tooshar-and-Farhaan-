@@ -1,2 +1,8 @@
 .idea
 testingJava*
+
+out/
+
+Database file (user-specific, generated at runtime)
+*.db
+.tictactoe-arena/
