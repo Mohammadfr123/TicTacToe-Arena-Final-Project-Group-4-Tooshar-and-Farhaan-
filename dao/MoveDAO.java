@@ -54,16 +54,17 @@ public class MoveDAO {
         List<Move> moves = new ArrayList<>();
 
         try (Connection conn = database.open();
-             PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
-
-            while (rs.next()) {
-                moves.add(new Move(
-                        rs.getLong("id"),
-                        rs.getLong("match_id"),
-                        rs.getLong("player_id"),
-                        rs.getInt("board_position"),
-                        rs.getInt("move_number")));
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setLong(1, matchId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    moves.add(new Move(
+                            rs.getLong("id"),
+                            rs.getLong("match_id"),
+                            rs.getLong("player_id"),
+                            rs.getInt("board_position"),
+                            rs.getInt("move_number")));
+                }
             }
         }
         return moves;
