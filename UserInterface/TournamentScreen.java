@@ -22,7 +22,6 @@ import TicTacToe.dao.TournamentDAO;
 import TicTacToe.dao.PlayerDAO;
 import TicTacToe.model.TournamentStanding;
 
-
 /**
  * TournamentScreen allows users to create and view tournaments.
  * This implements basic CRUD for the Tournament entity.
@@ -94,9 +93,6 @@ public class TournamentScreen {
                             "You need at least 2 registered players to start a match.");
                     return;
                 }
-
-                playerXCombo.getItems().addAll(playerList);
-                playerOCombo.getItems().addAll(playerList);
 
                 Player playerX = playerXCombo.getValue();
                 Player playerO = playerOCombo.getValue();

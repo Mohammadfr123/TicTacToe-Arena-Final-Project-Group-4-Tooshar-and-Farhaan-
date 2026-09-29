@@ -41,8 +41,4 @@ $(find . -name "*.java")
 
 - Run: 
 
-java --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
---add-modules ALL-MODULE-PATH \
--cp "out:lib/sqlite-jdbc-3.46.1.3.jar" \
--Djava.library.path="/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
-TicTacToe.Main
+java --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" --add-modules ALL-MODULE-PATH -cp "out:lib/sqlite-jdbc-3.46.1.3.jar" -Djava.library.path="/home/tks/Downloads/javafx-sdk-26.0.2/lib" TicTacToe.Main
