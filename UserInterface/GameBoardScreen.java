@@ -1,5 +1,7 @@
 package TicTacToe.UserInterface;
+import TicTacToe.util.DialogUtil;
 
+import java.sql.SQLException;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

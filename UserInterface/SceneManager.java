@@ -39,7 +39,7 @@ public class SceneManager {
 
     //Transitions the app to the Game Board for a match
     public void showGameBoard() {
-        stage.setScene(GameBoardScreen.build(this));
+        stage.setScene(GameBoardScreen.build(this, gameService, 0L, 0L, "Player X", 0L, "Player O"));
     }
 
     //Transitions the app to Player Profiles management.
@@ -53,7 +53,7 @@ public class SceneManager {
      * We pass the tournamentDAO here so the screen can manage tournaments.
      */
     public void showTournaments() {
-        stage.setScene(TournamentScreen.build(this, tournamentDAO));
+        stage.setScene(TournamentScreen.build(this, tournamentDAO, playerDAO));
     }
 
     /**
@@ -62,9 +62,7 @@ public class SceneManager {
      * when the game ends.
      */
     public void showTournamentMatch(long tournamentId, long playerXId, String playerXName, long playerOId, String playerOName) {
-        stage.setScene(GameBoardScreen.build(this, gameService, tournamentId,
-                playerXId, playerXName,
-                playerOId, playerOName));
+        stage.setScene(GameBoardScreen.build(this, gameService, tournamentId, playerXId, playerXName, playerOId, playerOName));
     }
 
     /**
