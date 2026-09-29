@@ -4,6 +4,7 @@ import TicTacToe.model.Player;
 import TicTacToe.util.DialogUtil;
 import TicTacToe.util.ValidationException;
 import TicTacToe.util.Validator;
+import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -14,6 +15,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import TicTacToe.dao.PlayerDAO;
+
 
 /**
  * PlayerProfileScreen allows the user to manage registered players.
@@ -25,7 +28,14 @@ public class PlayerProfileScreen {
     public static Scene build(SceneManager sceneManager, PlayerDAO playerDAO) {
         // READ: We fetch all players from the database and put them in an ObservableList
         // so the ListView updates automatically when the list changes.
-        ObservableList<Player> players = FXCollections.observableArrayList(playerDAO.findAll());
+
+        final ObservableList<Player> players = FXCollections.observableArrayList();
+        try {
+            players.addAll(playerDAO.findAll());
+        } catch (SQLException e) {
+            DialogUtil.showError("Database error", "Could not load players: " + e.getMessage());
+        }
+
         ListView<Player> listView = new ListView<>(players);
 
         listView.getStyleClass().add("list-view");
@@ -50,7 +60,10 @@ public class PlayerProfileScreen {
                 usernameField.clear();
             } catch (ValidationException ex) {
                 DialogUtil.showError("Couldn't add player", ex.getMessage());
+            }catch (SQLException ex) {
+                DialogUtil.showError("Database error", "Could not create player: " + ex.getMessage());
             }
+
         });
 
         // UPDATE: Update the username of the selected player in the DB
@@ -68,6 +81,8 @@ public class PlayerProfileScreen {
                 usernameField.clear();
             } catch (ValidationException ex) {
                 DialogUtil.showError("Couldn't update player", ex.getMessage());
+            } catch (SQLException ex) {
+                DialogUtil.showError("Database error", "Could not update player: " + ex.getMessage());
             }
         });
 
@@ -78,8 +93,12 @@ public class PlayerProfileScreen {
                 DialogUtil.showError("Nothing selected", "Select a player from the list first.");
                 return;
             }
-            playerDAO.delete(selected.getId());
-            players.remove(selected);
+            try {
+                playerDAO.delete(selected.getId());
+                players.remove(selected);
+            } catch (SQLException ex) {
+                DialogUtil.showError("Database error", "Could not delete player: " + ex.getMessage());
+            }
         });
 
         Button backBtn = new Button("Back to Menu");

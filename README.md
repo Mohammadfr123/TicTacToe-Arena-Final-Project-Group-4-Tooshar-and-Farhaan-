@@ -27,4 +27,22 @@ The application is designed to be "zero-config". On the first execution, the app
 - `UserInterface/`: JavaFX screens and navigation logic.
 - `util/`: Input validation and utility dialogs.
 - `model/`: Domain entities.
-- `dao/`: (To be implemented by Tooshar) Data Access Objects for SQL operations.
+- `dao/`: Data Access Objects for SQL operations.
+
+
+## How to compile and run on linux (TKS's laptop ,nobara)
+- Compile: 
+
+javac --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+--add-modules ALL-MODULE-PATH \
+-cp "lib/sqlite-jdbc-3.46.1.3.jar" \
+-d out \
+$(find . -name "*.java")
+
+- Run: 
+
+java --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+--add-modules ALL-MODULE-PATH \
+-cp "out:lib/sqlite-jdbc-3.46.1.3.jar" \
+-Djava.library.path="/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+TicTacToe.Main
