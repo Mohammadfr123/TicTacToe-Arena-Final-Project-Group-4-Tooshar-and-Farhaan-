@@ -29,6 +29,10 @@ The application is designed to be "zero-config". On the first execution, the app
 - `model/`: Domain entities.
 - `dao/`: Data Access Objects for SQL operations.
 
+## Project Document Report
+
+Link: https://docs.google.com/document/d/1sgvqMp50EWXu9BcjR7pnYlDy-6CwmyLfb_h5qMo2xU8/edit?usp=sharing
+
 
 ## How to compile and run on linux (TKS's laptop ,nobara)
 - Compile: 

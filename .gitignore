@@ -2,6 +2,7 @@
 testingJava*
 
 out/
+out-test/
 
 Database file (user-specific, generated at runtime)
 *.db

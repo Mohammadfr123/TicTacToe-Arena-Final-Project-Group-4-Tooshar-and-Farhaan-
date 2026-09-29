@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="86" skipped="0" failures="0" errors="0" time="1.105" hostname="nobara-pC" timestamp="2026-09-30T01:32:51">
+<properties>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="java.class.path" value="/home/tks/Documents/ALCHE/Prog 2/TicTacToe Farhaan idea/Tictactoe project idea/lib/junit-platform-console-standalone-1.11.0.jar"/>
+<property name="java.class.version" value="70.0"/>
+<property name="java.home" value="/usr/lib/jvm/jdk-26.0.1-oracle-x64"/>
+<property name="java.io.tmpdir" value="/tmp"/>
+<property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+<property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+<property name="java.runtime.version" value="26.0.1+8-34"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="26"/>
+<property name="java.vendor" value="Oracle Corporation"/>
+<property name="java.vendor.url" value="https://java.oracle.com/"/>
+<property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+<property name="java.version" value="26.0.1"/>
+<property name="java.version.date" value="2026-04-21"/>
+<property name="java.vm.compressedOopsMode" value="Zero based"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="26"/>
+<property name="java.vm.vendor" value="Oracle Corporation"/>
+<property name="java.vm.version" value="26.0.1+8-34"/>
+<property name="jdk.debug" value="release"/>
+<property name="junit.docs.version" value="1.11.0"/>
+<property name="line.separator" value="
+"/>
+<property name="native.encoding" value="UTF-8"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Linux"/>
+<property name="os.version" value="7.2.6-201.nobara.fc44.x86_64"/>
+<property name="path.separator" value=":"/>
+<property name="stderr.encoding" value="UTF-8"/>
+<property name="stdin.encoding" value="UTF-8"/>
+<property name="stdout.encoding" value="UTF-8"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-26.0.1-oracle-x64/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+<property name="sun.java.command" value="/home/tks/Documents/ALCHE/Prog 2/TicTacToe Farhaan idea/Tictactoe project idea/lib/junit-platform-console-standalone-1.11.0.jar --class-path out:out-test:lib/sqlite-jdbc-3.46.1.3.jar --scan-classpath --reports-dir test-report"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="/home/tks/Documents/ALCHE/Prog 2/Summative/TicTacToe-Arena-Final-Project-Group-4-Tooshar-and-Farhaan-"/>
+<property name="user.home" value="/home/tks"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="tks"/>
+<property name="user.timezone" value="Indian/Mauritius"/>
+</properties>
+<testcase name="createNext_TwoRoundsForSameTournament_NumbersAreOneAndTwo()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:createNext_TwoRoundsForSameTournament_NumbersAreOneAndTwo()]
+display-name: createNext_TwoRoundsForSameTournament_NumbersAreOneAndTwo()
+]]></system-out>
+</testcase>
+<testcase name="emptyTournamentName_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:emptyTournamentName_ThrowsValidationException()]
+display-name: emptyTournamentName_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="colZeroComplete_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:colZeroComplete_XWins()]
+display-name: colZeroComplete_XWins()
+]]></system-out>
+</testcase>
+<testcase name="nullUsername_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:nullUsername_ThrowsValidationException()]
+display-name: nullUsername_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="delete_ExistingId_RemovesTournament()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:delete_ExistingId_RemovesTournament()]
+display-name: delete_ExistingId_RemovesTournament()
+]]></system-out>
+</testcase>
+<testcase name="findAll_EmptyDatabase_ReturnsEmptyList()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:findAll_EmptyDatabase_ReturnsEmptyList()]
+display-name: findAll_EmptyDatabase_ReturnsEmptyList()
+]]></system-out>
+</testcase>
+<testcase name="findAll_AfterCreates_ReturnsAllSortedByCreatedAtDesc()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:findAll_AfterCreates_ReturnsAllSortedByCreatedAtDesc()]
+display-name: findAll_AfterCreates_ReturnsAllSortedByCreatedAtDesc()
+]]></system-out>
+</testcase>
+<testcase name="usernameAtMaxLength_Accepted()" classname="TicTacToe.util.ValidatorTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:usernameAtMaxLength_Accepted()]
+display-name: usernameAtMaxLength_Accepted()
+]]></system-out>
+</testcase>
+<testcase name="eightCellsFilled_IsNotFull()" classname="TicTacToe.game.WinCheckerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:eightCellsFilled_IsNotFull()]
+display-name: eightCellsFilled_IsNotFull()
+]]></system-out>
+</testcase>
+<testcase name="emptyUsername_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:emptyUsername_ThrowsValidationException()]
+display-name: emptyUsername_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="winningBoardForX_WrongCandidateReturnsFalse()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:winningBoardForX_WrongCandidateReturnsFalse()]
+display-name: winningBoardForX_WrongCandidateReturnsFalse()
+]]></system-out>
+</testcase>
+<testcase name="resetAfterGameOver_BoardEmpty_CurrentPlayerIsX_GameNotOver()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:resetAfterGameOver_BoardEmpty_CurrentPlayerIsX_GameNotOver()]
+display-name: resetAfterGameOver_BoardEmpty_CurrentPlayerIsX_GameNotOver()
+]]></system-out>
+</testcase>
+<testcase name="nullTournamentName_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:nullTournamentName_ThrowsValidationException()]
+display-name: nullTournamentName_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="boardWithNoCompleteLine_NoWinner()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:boardWithNoCompleteLine_NoWinner()]
+display-name: boardWithNoCompleteLine_NoWinner()
+]]></system-out>
+</testcase>
+<testcase name="create_ReturnsPlayerWithIdNameAndCreatedAt()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.02">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:create_ReturnsPlayerWithIdNameAndCreatedAt()]
+display-name: create_ReturnsPlayerWithIdNameAndCreatedAt()
+]]></system-out>
+</testcase>
+<testcase name="tournamentDelete_NonExistentId_ReturnsFalse()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:tournamentDelete_NonExistentId_ReturnsFalse()]
+display-name: tournamentDelete_NonExistentId_ReturnsFalse()
+]]></system-out>
+</testcase>
+<testcase name="fullBoardWithWinner_WinnerAndIsFull()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:fullBoardWithWinner_WinnerAndIsFull()]
+display-name: fullBoardWithWinner_WinnerAndIsFull()
+]]></system-out>
+</testcase>
+<testcase name="usernameMixedCaseAndDigits_Accepted()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:usernameMixedCaseAndDigits_Accepted()]
+display-name: usernameMixedCaseAndDigits_Accepted()
+]]></system-out>
+</testcase>
+<testcase name="fullBoardNoWinner_NoWinnerAndIsFull()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:fullBoardNoWinner_NoWinnerAndIsFull()]
+display-name: fullBoardNoWinner_NoWinnerAndIsFull()
+]]></system-out>
+</testcase>
+<testcase name="colTwoComplete_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:colTwoComplete_XWins()]
+display-name: colTwoComplete_XWins()
+]]></system-out>
+</testcase>
+<testcase name="create_ReturnsMoveWithId()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:create_ReturnsMoveWithId()]
+display-name: create_ReturnsMoveWithId()
+]]></system-out>
+</testcase>
+<testcase name="lineWithTwoOfThree_CountsAsNotComplete()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:lineWithTwoOfThree_CountsAsNotComplete()]
+display-name: lineWithTwoOfThree_CountsAsNotComplete()
+]]></system-out>
+</testcase>
+<testcase name="boardWithXsButNoLine_NoWinner()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:boardWithXsButNoLine_NoWinner()]
+display-name: boardWithXsButNoLine_NoWinner()
+]]></system-out>
+</testcase>
+<testcase name="update_ChangesUsername()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:update_ChangesUsername()]
+display-name: update_ChangesUsername()
+]]></system-out>
+</testcase>
+<testcase name="delete_ExistingId_RemovesPlayer()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.008">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:delete_ExistingId_RemovesPlayer()]
+display-name: delete_ExistingId_RemovesPlayer()
+]]></system-out>
+</testcase>
+<testcase name="usernameWithInvalidCharacter_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:usernameWithInvalidCharacter_ThrowsValidationException()]
+display-name: usernameWithInvalidCharacter_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="tournamentNameWithWhitespace_ReturnsTrimmed()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:tournamentNameWithWhitespace_ReturnsTrimmed()]
+display-name: tournamentNameWithWhitespace_ReturnsTrimmed()
+]]></system-out>
+</testcase>
+<testcase name="findAll_AfterCreates_ReturnsAllSortedByUsername()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:findAll_AfterCreates_ReturnsAllSortedByUsername()]
+display-name: findAll_AfterCreates_ReturnsAllSortedByUsername()
+]]></system-out>
+</testcase>
+<testcase name="usernameWithLeadingAndTrailingWhitespace_ReturnsTrimmed()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:usernameWithLeadingAndTrailingWhitespace_ReturnsTrimmed()]
+display-name: usernameWithLeadingAndTrailingWhitespace_ReturnsTrimmed()
+]]></system-out>
+</testcase>
+<testcase name="stats_PlayerWithNoMatches_ReturnsZeros()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:stats_PlayerWithNoMatches_ReturnsZeros()]
+display-name: stats_PlayerWithNoMatches_ReturnsZeros()
+]]></system-out>
+</testcase>
+<testcase name="oWinsRow0_GameOver_OEIsWinner()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:oWinsRow0_GameOver_OEIsWinner()]
+display-name: oWinsRow0_GameOver_OEIsWinner()
+]]></system-out>
+</testcase>
+<testcase name="playPosition9_ReturnsFalse()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:playPosition9_ReturnsFalse()]
+display-name: playPosition9_ReturnsFalse()
+]]></system-out>
+</testcase>
+<testcase name="afterOPlays_CurrentPlayerBecomesX()" classname="TicTacToe.game.GameSessionTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:afterOPlays_CurrentPlayerBecomesX()]
+display-name: afterOPlays_CurrentPlayerBecomesX()
+]]></system-out>
+</testcase>
+<testcase name="updateName_NonExistentId_ReturnsFalse()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:updateName_NonExistentId_ReturnsFalse()]
+display-name: updateName_NonExistentId_ReturnsFalse()
+]]></system-out>
+</testcase>
+<testcase name="deletePlayerWithNoMatches_Succeeds()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:deletePlayerWithNoMatches_Succeeds()]
+display-name: deletePlayerWithNoMatches_Succeeds()
+]]></system-out>
+</testcase>
+<testcase name="tournamentFindAll_EmptyDatabase_ReturnsEmptyList()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:tournamentFindAll_EmptyDatabase_ReturnsEmptyList()]
+display-name: tournamentFindAll_EmptyDatabase_ReturnsEmptyList()
+]]></system-out>
+</testcase>
+<testcase name="createDuplicateMoveNumberForSameMatch_ThrowsSQLException()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.019">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:createDuplicateMoveNumberForSameMatch_ThrowsSQLException()]
+display-name: createDuplicateMoveNumberForSameMatch_ThrowsSQLException()
+]]></system-out>
+</testcase>
+<testcase name="playAfterWin_ReturnsFalse_NoNewMoveRecorded()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:playAfterWin_ReturnsFalse_NoNewMoveRecorded()]
+display-name: playAfterWin_ReturnsFalse_NoNewMoveRecorded()
+]]></system-out>
+</testcase>
+<testcase name="boardFullNoWinner_Draw_GameOver()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:boardFullNoWinner_Draw_GameOver()]
+display-name: boardFullNoWinner_Draw_GameOver()
+]]></system-out>
+</testcase>
+<testcase name="playOnOccupiedCell_ReturnsFalse_BoardUnchanged()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:playOnOccupiedCell_ReturnsFalse_BoardUnchanged()]
+display-name: playOnOccupiedCell_ReturnsFalse_BoardUnchanged()
+]]></system-out>
+</testcase>
+<testcase name="lineBlockedByOtherPlayer_CountsAsNotComplete()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:lineBlockedByOtherPlayer_CountsAsNotComplete()]
+display-name: lineBlockedByOtherPlayer_CountsAsNotComplete()
+]]></system-out>
+</testcase>
+<testcase name="create_WithRound_Player1_Player2_Winner_ReturnsMatchId()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.021">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:create_WithRound_Player1_Player2_Winner_ReturnsMatchId()]
+display-name: create_WithRound_Player1_Player2_Winner_ReturnsMatchId()
+]]></system-out>
+</testcase>
+<testcase name="colOneComplete_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:colOneComplete_XWins()]
+display-name: colOneComplete_XWins()
+]]></system-out>
+</testcase>
+<testcase name="diagonalTopLeftToBottomRight_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:diagonalTopLeftToBottomRight_XWins()]
+display-name: diagonalTopLeftToBottomRight_XWins()
+]]></system-out>
+</testcase>
+<testcase name="diagonalTopRightToBottomLeft_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:diagonalTopRightToBottomLeft_XWins()]
+display-name: diagonalTopRightToBottomLeft_XWins()
+]]></system-out>
+</testcase>
+<testcase name="newSession_PlayerMapping_ReturnsCorrectIds()" classname="TicTacToe.game.GameSessionTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:newSession_PlayerMapping_ReturnsCorrectIds()]
+display-name: newSession_PlayerMapping_ReturnsCorrectIds()
+]]></system-out>
+</testcase>
+<testcase name="blankTournamentName_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:blankTournamentName_ThrowsValidationException()]
+display-name: blankTournamentName_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="createNext_TwoTournaments_EachStartsAtOne()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:createNext_TwoTournaments_EachStartsAtOne()]
+display-name: createNext_TwoTournaments_EachStartsAtOne()
+]]></system-out>
+</testcase>
+<testcase name="validTournamentName_ReturnsTrimmed()" classname="TicTacToe.util.ValidatorTest" time="0.064">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:validTournamentName_ReturnsTrimmed()]
+display-name: validTournamentName_ReturnsTrimmed()
+]]></system-out>
+</testcase>
+<testcase name="rowTwoComplete_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:rowTwoComplete_XWins()]
+display-name: rowTwoComplete_XWins()
+]]></system-out>
+</testcase>
+<testcase name="usernameOverMaxLength_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:usernameOverMaxLength_ThrowsValidationException()]
+display-name: usernameOverMaxLength_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="boardWithOnlyO_CheckingXReturnsFalse()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:boardWithOnlyO_CheckingXReturnsFalse()]
+display-name: boardWithOnlyO_CheckingXReturnsFalse()
+]]></system-out>
+</testcase>
+<testcase name="xWinsDiagonal0_4_8_GameOver_XIsWinner()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:xWinsDiagonal0_4_8_GameOver_XIsWinner()]
+display-name: xWinsDiagonal0_4_8_GameOver_XIsWinner()
+]]></system-out>
+</testcase>
+<testcase name="afterXPlays_CurrentPlayerBecomesO()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:afterXPlays_CurrentPlayerBecomesO()]
+display-name: afterXPlays_CurrentPlayerBecomesO()
+]]></system-out>
+</testcase>
+<testcase name="findById_NonExistentId_ReturnsNull()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:findById_NonExistentId_ReturnsNull()]
+display-name: findById_NonExistentId_ReturnsNull()
+]]></system-out>
+</testcase>
+<testcase name="validUsername_ReturnsTrimmed()" classname="TicTacToe.util.ValidatorTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:validUsername_ReturnsTrimmed()]
+display-name: validUsername_ReturnsTrimmed()
+]]></system-out>
+</testcase>
+<testcase name="stats_AfterWinAndDraw_ReflectsCorrectly()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.019">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:stats_AfterWinAndDraw_ReflectsCorrectly()]
+display-name: stats_AfterWinAndDraw_ReflectsCorrectly()
+]]></system-out>
+</testcase>
+<testcase name="usernameWithSpace_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:usernameWithSpace_ThrowsValidationException()]
+display-name: usernameWithSpace_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="tournamentFindById_NonExistentId_ReturnsNull()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.429">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:tournamentFindById_NonExistentId_ReturnsNull()]
+display-name: tournamentFindById_NonExistentId_ReturnsNull()
+]]></system-out>
+</testcase>
+<testcase name="findById_ExistingId_ReturnsTournament()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:findById_ExistingId_ReturnsTournament()]
+display-name: findById_ExistingId_ReturnsTournament()
+]]></system-out>
+</testcase>
+<testcase name="playNegativePosition_ReturnsFalse()" classname="TicTacToe.game.GameSessionTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:playNegativePosition_ReturnsFalse()]
+display-name: playNegativePosition_ReturnsFalse()
+]]></system-out>
+</testcase>
+<testcase name="oneCellFilled_IsNotFull()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:oneCellFilled_IsNotFull()]
+display-name: oneCellFilled_IsNotFull()
+]]></system-out>
+</testcase>
+<testcase name="delete_NonExistentId_ReturnsFalse()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:delete_NonExistentId_ReturnsFalse()]
+display-name: delete_NonExistentId_ReturnsFalse()
+]]></system-out>
+</testcase>
+<testcase name="newSession_PlayerNameMapping_ReturnsCorrectNames()" classname="TicTacToe.game.GameSessionTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:newSession_PlayerNameMapping_ReturnsCorrectNames()]
+display-name: newSession_PlayerNameMapping_ReturnsCorrectNames()
+]]></system-out>
+</testcase>
+<testcase name="findById_ExistingId_ReturnsPlayer()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:findById_ExistingId_ReturnsPlayer()]
+display-name: findById_ExistingId_ReturnsPlayer()
+]]></system-out>
+</testcase>
+<testcase name="nineCellsFilled_IsFull()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:nineCellsFilled_IsFull()]
+display-name: nineCellsFilled_IsFull()
+]]></system-out>
+</testcase>
+<testcase name="deletePlayerReferencedByMatch_ThrowsSQLException()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:deletePlayerReferencedByMatch_ThrowsSQLException()]
+display-name: deletePlayerReferencedByMatch_ThrowsSQLException()
+]]></system-out>
+</testcase>
+<testcase name="rowZeroComplete_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:rowZeroComplete_XWins()]
+display-name: rowZeroComplete_XWins()
+]]></system-out>
+</testcase>
+<testcase name="usernameWithUnderscore_Accepted()" classname="TicTacToe.util.ValidatorTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:usernameWithUnderscore_Accepted()]
+display-name: usernameWithUnderscore_Accepted()
+]]></system-out>
+</testcase>
+<testcase name="create_WithoutRound_CasualMatch_RoundIdIsNullInDb()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.017">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:create_WithoutRound_CasualMatch_RoundIdIsNullInDb()]
+display-name: create_WithoutRound_CasualMatch_RoundIdIsNullInDb()
+]]></system-out>
+</testcase>
+<testcase name="findByMatch_ReturnsMovesInMoveNumberOrder()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:findByMatch_ReturnsMovesInMoveNumberOrder()]
+display-name: findByMatch_ReturnsMovesInMoveNumberOrder()
+]]></system-out>
+</testcase>
+<testcase name="create_ReturnsTournamentWithIdNameAndCreatedAt()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:create_ReturnsTournamentWithIdNameAndCreatedAt()]
+display-name: create_ReturnsTournamentWithIdNameAndCreatedAt()
+]]></system-out>
+</testcase>
+<testcase name="rowOneComplete_XWins()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:rowOneComplete_XWins()]
+display-name: rowOneComplete_XWins()
+]]></system-out>
+</testcase>
+<testcase name="createNext_FirstRoundForTournament_HasRoundNumberOne()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:createNext_FirstRoundForTournament_HasRoundNumberOne()]
+display-name: createNext_FirstRoundForTournament_HasRoundNumberOne()
+]]></system-out>
+</testcase>
+<testcase name="newSession_BoardEmpty_CurrentPlayerIsX_GameNotOver()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:newSession_BoardEmpty_CurrentPlayerIsX_GameNotOver()]
+display-name: newSession_BoardEmpty_CurrentPlayerIsX_GameNotOver()
+]]></system-out>
+</testcase>
+<testcase name="updateName_ChangesName()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:updateName_ChangesName()]
+display-name: updateName_ChangesName()
+]]></system-out>
+</testcase>
+<testcase name="tournamentCreateDuplicate_ThrowsSQLException()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:tournamentCreateDuplicate_ThrowsSQLException()]
+display-name: tournamentCreateDuplicate_ThrowsSQLException()
+]]></system-out>
+</testcase>
+<testcase name="rowZeroComplete_OWins()" classname="TicTacToe.game.WinCheckerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:rowZeroComplete_OWins()]
+display-name: rowZeroComplete_OWins()
+]]></system-out>
+</testcase>
+<testcase name="playAfterDraw_ReturnsFalse_NoNewMoveRecorded()" classname="TicTacToe.game.GameSessionTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:playAfterDraw_ReturnsFalse_NoNewMoveRecorded()]
+display-name: playAfterDraw_ReturnsFalse_NoNewMoveRecorded()
+]]></system-out>
+</testcase>
+<testcase name="create_Draw_WinnerIdIsNullInDb()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:create_Draw_WinnerIdIsNullInDb()]
+display-name: create_Draw_WinnerIdIsNullInDb()
+]]></system-out>
+</testcase>
+<testcase name="createDuplicate_ThrowsSQLException()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.008">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:createDuplicate_ThrowsSQLException()]
+display-name: createDuplicate_ThrowsSQLException()
+]]></system-out>
+</testcase>
+<testcase name="deleteTournament_CascadesToRoundsMatchesAndMoves()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:deleteTournament_CascadesToRoundsMatchesAndMoves()]
+display-name: deleteTournament_CascadesToRoundsMatchesAndMoves()
+]]></system-out>
+</testcase>
+<testcase name="blankUsername_ThrowsValidationException()" classname="TicTacToe.util.ValidatorTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.util.ValidatorTest]/[method:blankUsername_ThrowsValidationException()]
+display-name: blankUsername_ThrowsValidationException()
+]]></system-out>
+</testcase>
+<testcase name="emptyBoard_IsNotFull()" classname="TicTacToe.game.WinCheckerTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.WinCheckerTest]/[method:emptyBoard_IsNotFull()]
+display-name: emptyBoard_IsNotFull()
+]]></system-out>
+</testcase>
+<testcase name="eachMove_RecordsCorrectPlayerAndPosition()" classname="TicTacToe.game.GameSessionTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.game.GameSessionTest]/[method:eachMove_RecordsCorrectPlayerAndPosition()]
+display-name: eachMove_RecordsCorrectPlayerAndPosition()
+]]></system-out>
+</testcase>
+<testcase name="update_NonExistentId_ReturnsFalse()" classname="TicTacToe.dao.RepositoryCrudTest" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:TicTacToe.dao.RepositoryCrudTest]/[method:update_NonExistentId_ReturnsFalse()]
+display-name: update_NonExistentId_ReturnsFalse()
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>
