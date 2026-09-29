@@ -46,6 +46,7 @@ public class Main extends Application {
             sceneManager = new SceneManager(primaryStage, playerDAO, tournamentDAO);
 
             // 5. Show the main menu - the first screen the user sees.
+            primaryStage.show(); //To show the stage
             sceneManager.showMainMenu();
 
         } catch (SQLException | IOException e) {
