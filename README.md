@@ -37,12 +37,33 @@ Link: https://docs.google.com/document/d/1sgvqMp50EWXu9BcjR7pnYlDy-6CwmyLfb_h5qM
 ## How to compile and run on linux (TKS's laptop ,nobara)
 - Compile: 
 
+
+App
 javac --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
 --add-modules ALL-MODULE-PATH \
--cp "lib/sqlite-jdbc-3.46.1.3.jar" \
+-cp "lib/sqlite-jdbc-3.46.1.3.jar:..." \
 -d out \
-$(find . -name "*.java")
+model/.java dao/.java db/.java game/.java util/.java UserInterface/.java Main.java
+
+Tests
+javac --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+--add-modules ALL-MODULE-PATH \
+-cp "out:lib/sqlite-jdbc-3.46.1.3.jar:..." \
+-d out-test \
+test/WinCheckerTest.java test/util/ValidatorTest.java test/game/GameSessionTest.java test/dao/RepositoryCrudTest.java
+
+
 
 - Run: 
+App: 
+java --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+--add-modules ALL-MODULE-PATH \
+-cp "out:lib/sqlite-jdbc-3.46.1.3.jar" \
+-Djava.library.path="/home/tks/Downloads/javafx-sdk-26.0.2/lib" \
+TicTacToe.Main
 
-java --module-path "/home/tks/Downloads/javafx-sdk-26.0.2/lib" --add-modules ALL-MODULE-PATH -cp "out:lib/sqlite-jdbc-3.46.1.3.jar" -Djava.library.path="/home/tks/Downloads/javafx-sdk-26.0.2/lib" TicTacToe.Main
+Test:
+java -jar "/home/tks/Documents/ALCHE/Prog 2/TicTacToe Farhaan idea/Tictactoe project idea/lib/junit-platform-console-standalone-1.11.0.jar" \
+--class-path "out:out-test:lib/sqlite-jdbc-3.46.1.3.jar" \
+--scan-classpath \
+--reports-dir test-report
